@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-a2d4d23c99d9c5c36ba1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FateWalkerGUI",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FateWalkerGUI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FateWalkerGUI-Debug-4c8695a1de00c320fd6b.json",
+					"name" : "FateWalkerGUI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FateWalkerGUI_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FateWalkerGUI_autogen-Debug-c197d1b1dce172bc35cc.json",
+					"name" : "FateWalkerGUI_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FateWalkerGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FateWalkerGUI_autogen_timestamp_deps-Debug-9dce11583499d5665aac.json",
+					"name" : "FateWalkerGUI_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Fear.and.Hunger.v1.4.1/FateWalkerGUI/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug",
+		"source" : "E:/Fear.and.Hunger.v1.4.1/FateWalkerGUI"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
