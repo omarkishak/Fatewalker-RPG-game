@@ -4,42 +4,57 @@
 #include <cstdlib>
 #include <ctime>
 #include <random>
+#include <limits>
+#include <map>
 
-
-using namespace std;
-
-#include <string>
 using namespace std;
 
 class player {
 public:
-    string playerName;
+    string player_name;
+    string soul_type;
     double health;
+    double resistance;
+    double attack_value;
     static double luck;
-    double attack;
-    int coins;
+    map<string, int> inventory;
+
 
     player(string name) {
-        playerName = name;
+        player_name = name;
         health = 100;
         luck = 100;
-        attack = 20;
-        coins = 0;
+        attack_value = 20;
+        inventory = {
+            {"Coins", 0},
+            {"Blood Sword", 0},
+            {"Magic Sword", 0},
+            {"Twisted Sword", 0},
+            {"Health Potion", 0},
+            {"Stringth Potion", 0},
+            {"Resistance Potion", 0}
+        };
     }
 
     //Getters
-    string getPlayerName()  { return playerName; }
-    double getHealth()      { return health; }
-    static double getLuck() { return luck; }
-    double getAttack()      { return attack; }
-    int getCoins()          { return coins; }
+    string getPlayerName()          { return player_name; }
+    double getHealth()              { return health; }
+    static double getLuck()         { return luck; }
+    double getAttack()              { return attack_value; }
+    map<string, int> getInventory() {return inventory;}
 
     //Setters
-    void setPlayerName(string name) { playerName = name; }
+    void setPlayerName(string name) { player_name = name; }
     void setHealth(double h)        { health = h; }
     static void setLuck(double l)   { luck = l; }
-    void setAttack(double a)        { attack = a; }
-    void setCoins(int c)            { coins = c; }
+    void setAttack(double a)        { attack_value = a; }
+    void setItem(const string& name, int value) {
+        if (inventory.find(name) != inventory.end()) {
+            inventory[name] = value;
+        } else {
+            cout << "Item does not exist!\n";
+        }
+    }
 };
 
 class warrior_race : public player {
@@ -53,25 +68,6 @@ class intelligent_race : public player {
 class talented_race : public player {
     public:
 };
-
-
-class lvl1 {
-    public:
-
-    
-};
-
-class lvl2 : public lvl1{
-
-};
-
-class lvl3 : public lvl1{
-
-};
-
-void shop(){
-
-}
 
 //Random Number Generator To Control Luck %
 int genRandom(){
@@ -148,6 +144,23 @@ while (true) {
         }
     }
 
+}
+
+int getIntInput() {
+    int value;
+
+    while (true) {
+        cin >> value;
+
+        if (cin.fail()) {
+            cin.clear(); // fix broken state
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // remove bad input
+            cout << "Invalid input. Please enter a number: ";
+        } else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clean leftover
+            return value;
+        }
+    }
 }
 
 int main() {
