@@ -22,6 +22,7 @@ public:
 
     player(string name) {
         player_name = name;
+        soul_type =
         health = 100;
         luck = 100;
         attack_value = 20;
