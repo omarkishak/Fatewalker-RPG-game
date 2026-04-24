@@ -9,6 +9,8 @@
 
 using namespace std;
 
+class
+
 class player {
 public:
     string player_name;
